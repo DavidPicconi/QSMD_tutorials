@@ -1,0 +1,28 @@
+OP_DEFINE-SECTION
+title
+NaCl model from T. J. Giese and D. M. York, J. Chem. Phys. 120, 7939 (2004)
+end-title
+end-op_define-section
+
+PARAMETER-SECTION
+mass_R = 25420.4, au   # Reduced mass of Na + Cl
+end-parameter-section
+
+HAMILTONIAN-SECTION
+-------------------------------------
+modes           | R      | el
+-------------------------------------
+1.0             | KE     | 1
+1.0             | W11    | S1&1
+1.0             | W22    | S2&2
+1.0             | W12    | S1&2
+-------------------------------------
+end-hamiltonian-section
+
+LABELS-section
+W11 = external1d{w_11.dat}
+W22 = external1d{w_22.dat}
+W12 = external1d{w_12.dat}
+end-LABELS-section
+
+end-operator
