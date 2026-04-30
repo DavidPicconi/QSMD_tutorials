@@ -1,0 +1,7 @@
+ mass |1  25420.4
+ freq |1  0.0000786769681
+
+ 1.0  |el S1&1  |1 interp  w_11.dat
+ 1.0  |el S2&2  |1 interp  w_22.dat
+ 1.0  |el S1&2  |1 interp  w_12.dat
+
