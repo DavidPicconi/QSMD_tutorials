@@ -1,0 +1,33 @@
+RUN-SECTION
+name = NaCl_4   propagate
+tfinal = 2000.0   tout = 2.0   tpsi= 2.0
+gridpop=el    psi
+title = NaCl dissociation - association
+exact
+end-run-section
+
+OPERATOR-SECTION
+opname = NaCl
+alter-labels
+CAP_R = CAP [28.0  0.3  2]
+end-alter-labels
+end-operator-section
+
+
+PRIMITIVE-BASIS-SECTION
+    R     sin      901  3.0  30.0
+    el     el      2
+end-primitive-basis-section
+
+INTEGRATOR-SECTION
+SIL   = 30 , 1.0d-6
+end-integrator-section
+
+INIT_WF-SECTION
+build
+   init_state =  2
+   R    gauss   24.0  -4.0   0.5
+end-build
+end-init_wf-section
+
+end-input
