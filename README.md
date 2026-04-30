@@ -1,1 +1,1 @@
-See the manual (QSMD_tutorials.pdf) for information
+See the manual *QSMD_tutorials.pdf* for information
