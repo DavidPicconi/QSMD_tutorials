@@ -1,0 +1,94 @@
+#######################################################################
+###     Butatriene B2u-state, quadratic Vibronic Coupling model
+###                           (all 18 modes)
+###     see: Cattarius et al. JCP 115, 2088-2100 (2001)
+#######################################################################
+
+RUN-SECTION
+   name = C4H4_B2u
+   propagation
+   tfinal = 200.0   tout = 1.00
+   title  = Butatrien, B2u, quadratic coupling
+   auto=twice   gridpop=el
+end-run-section
+
+OPERATOR-SECTION
+   opname = C4H4
+end-operator-section
+
+SPF-BASIS-SECTION
+multi-set
+   Q15,Q16,Q17,Q18,Q11,Q13    = 7,6
+   Q1,Q4,Q7                   = 10,10
+   Q2,Q3,Q6                   = 10,10
+   Q5,Q14,Q8                  = 12,13
+   Q9,Q10,Q12                 = 10,10
+
+end-spf-basis-section
+
+PRIMITIVE-BASIS-SECTION
+ el    el      2
+     Q1    HO     15   0.00     1.00    1.00
+     Q2    HO     14   0.00     1.00    1.00
+     Q3    HO     18   0.00     1.00    1.00
+     Q4    HO      9   0.00     1.00    1.00
+     Q5    HO     35   0.00     1.00    1.00
+     Q6    HO      8   0.00     1.00    1.00
+     Q7    HO      9   0.00     1.00    1.00
+     Q8    HO     10   0.00     1.00    1.00
+     Q9    HO      6   0.00     1.00    1.00
+     Q10   HO      8   0.00     1.00    1.00
+     Q11   HO      5   0.00     1.00    1.00
+     Q12   HO      5   0.00     1.00    1.00
+     Q13   HO      4   0.00     1.00    1.00
+     Q14   HO     13   0.00     1.00    1.00
+     Q15   HO      5   0.00     1.00    1.00
+     Q16   HO      4   0.00     1.00    1.00
+     Q17   HO      6   0.00     1.00    1.00
+     Q18   HO      4   0.00     1.00    1.00
+end-primitive-basis-section
+
+INTEGRATOR-SECTION
+  CMF/var = 0.1 , 1.0d-5
+  BS/spf  = 10  , 1.0d-5
+  SIL/A   =  9  , 1.0d-5
+end-integrator-section
+
+INIT_WF-SECTION
+build
+    init_state =  2
+    Q1     HO    0.0  0.0     1.0    1.0
+    Q2     HO    0.0  0.0     1.0    1.0
+    Q3     HO    0.0  0.0     1.0    1.0
+    Q4     HO    0.0  0.0     1.0    1.0
+    Q5     HO    0.0  0.0     1.0    1.0
+    Q6     HO    0.0  0.0     1.0    1.0
+    Q7     HO    0.0  0.0     1.0    1.0
+    Q8     HO    0.0  0.0     1.0    1.0
+    Q9     HO    0.0  0.0     1.0    1.0
+    Q10    HO    0.0  0.0     1.0    1.0
+    Q11    HO    0.0  0.0     1.0    1.0
+    Q12    HO    0.0  0.0     1.0    1.0
+    Q13    HO    0.0  0.0     1.0    1.0
+    Q14    HO    0.0  0.0     1.0    1.0
+    Q15    HO    0.0  0.0     1.0    1.0
+    Q16    HO    0.0  0.0     1.0    1.0
+    Q17    HO    0.0  0.0     1.0    1.0
+    Q18    HO    0.0  0.0     1.0    1.0
+end-build
+end-init_wf-section
+
+ALLOC-SECTION
+   maxkoe=200
+   maxhtm=300
+   maxhop=300
+   maxfac=30
+   maxLMR=1
+   maxdef=85
+   maxedim=1
+   maxsub=60
+   maxmuld=2
+   maxnhtmshift=1
+end-alloc-section
+
+end-input
